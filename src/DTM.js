@@ -82,6 +82,8 @@ class DTM extends EventEmitter {
         this.modulationPayload = DTM.DTM_PARAMETER.STANDARD_MODULATION_INDEX;
         this.phyPayload = DTM.DTM_PARAMETER.PHY_LE_1M;
         this.dbmPayload = 0;
+        this.femAntPayload = 0;
+        this.femGainPayload = 0;
         this.selectedTimer = 0;
 
 
@@ -190,6 +192,22 @@ class DTM extends EventEmitter {
         this.dbmPayload = dbm;
         const value = dbm & 0x3F;
         const cmd = this.dtmTransport.createTxPowerCMD(value);
+        const response = await this.dtmTransport.sendCMD(cmd);
+        return response;
+    }
+
+    async setupAnt(ant = this.femAntPayload) {
+        this.femAntPayload = ant;
+        const value = ant & 0x01;
+        const cmd = this.dtmTransport.createFemAntCMD(value);
+        const response = await this.dtmTransport.sendCMD(cmd);
+        return response;
+    }
+
+    async setupGain(gain = this.femGainPayload) {
+        this.femGainPayload = gain;
+        const value = gain & 0x03;
+        const cmd = this.dtmTransport.createFemGainCMD(value);
         const response = await this.dtmTransport.sendCMD(cmd);
         return response;
     }

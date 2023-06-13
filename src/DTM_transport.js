@@ -291,6 +291,22 @@ class DTMTransport extends EventEmitter {
         return this.createCMD(DTM_CMD.TRANSMITTER_TEST + dtmDbm + dtmLength + dtmPkt);
     }
 
+    createFemAntCMD(ant) {
+        this.log(`Create fem ant CMD: ${ant}`);
+        const dtmAnt = toBitString(ant);
+        const dtmLength = toBitString(3);
+        const dtmPkt = toBitString(DTM_PKT.PAYLOAD_VENDOR, 2);
+        return this.createCMD(DTM_CMD.TRANSMITTER_TEST + dtmAnt + dtmLength + dtmPkt);
+    }
+
+    createFemGainCMD(gain) {
+        this.log(`Create fem gain CMD: ${gain}`);
+        const dtmGain = toBitString(gain);
+        const dtmLength = toBitString(4);
+        const dtmPkt = toBitString(DTM_PKT.PAYLOAD_VENDOR, 2);
+        return this.createCMD(DTM_CMD.TRANSMITTER_TEST + dtmGain + dtmLength + dtmPkt);
+    }
+
     createSelectTimerCMD(value) {
         this.log(`Create select timer CMD: ${value}`);
         const dtmTimer = toBitString(value);
