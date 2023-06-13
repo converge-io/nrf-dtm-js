@@ -38,6 +38,17 @@
  *
  */
 
+const DTM_FEM_ANT_STRING = {
+    0x00: 'Antenna 1 (integrated)',
+    0x01: 'Antenna 2 (external)',
+};
+
+const DTM_FEM_GAIN_STRING = {
+    0x00: 'FEM Bypass',
+    0x01: 'FEM Low Gain',
+    0x02: 'FEM High Gain',
+};
+
 const DTM_PHY_STRING = {
     0x01: 'LE 1Mbps',
     0x02: 'LE 2Mbps',
@@ -58,6 +69,8 @@ const DTM_MODULATION_STRING = {
 };
 
 export {
+    DTM_FEM_ANT_STRING,
+    DTM_FEM_GAIN_STRING,
     DTM_PHY_STRING,
     DTM_PKT_STRING,
     DTM_MODULATION_STRING,

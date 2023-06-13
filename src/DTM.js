@@ -46,7 +46,7 @@ import EventEmitter from 'events';
 
 import Debug from 'debug';
 
-import { DTM_MODULATION_STRING, DTM_PHY_STRING, DTM_PKT_STRING } from './DTM_strings';
+import { DTM_MODULATION_STRING, DTM_PHY_STRING, DTM_FEM_ANT_STRING, DTM_FEM_GAIN_STRING, DTM_PKT_STRING } from './DTM_strings';
 import {
     DTMTransport,
     DTM_CONTROL,
@@ -652,6 +652,8 @@ DTM.DTM_PARAMETER = DTM_PARAMETER;
 
 export {
     DTM,
+    DTM_FEM_ANT_STRING,
+    DTM_FEM_GAIN_STRING,
     DTM_PHY_STRING,
     DTM_PKT_STRING,
     DTM_MODULATION_STRING,

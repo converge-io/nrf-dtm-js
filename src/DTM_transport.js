@@ -83,6 +83,13 @@ const DTM_PARAMETER = {
     SUPPORTED_MAX_TX_TIME: 0x01,
     SUPPORTED_MAX_RX_OCTETS: 0x02,
     SUPPORTED_MAX_RX_TIME: 0x03,
+
+    FEM_ANT_1: 0x00,
+    FEM_ANT_2: 0x01,
+
+    FEM_BYPASS: 0x00,
+    FEM_LOW: 0x01,
+    FEM_HIGH: 0x02,
 };
 
 // 2 bits
